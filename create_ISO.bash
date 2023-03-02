@@ -14,6 +14,8 @@ cd ..
 
 sed -i 's+module2 /boot/vmlinuz console=hvc0 console=tty0+module2 /boot/vmlinuz console=hvc0 console=tty0 answerfile=file:///answerfile.xml install+g' \
 ./EFI/xenserver/grub.cfg
+sed -i 's+module2 /boot/vmlinuz console=hvc0 console=tty0+module2 /boot/vmlinuz console=hvc0 console=tty0 answerfile=file:///answerfile.xml install+g' \
+./EFI/xenserver/grub-usb.cfg
 
 cp ../answerfile.xml ./install/
 
