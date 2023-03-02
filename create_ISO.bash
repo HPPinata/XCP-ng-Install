@@ -22,10 +22,9 @@ find . | cpio -o -H newc | bzip2 > ../install.img
 cd ..
 rm -rf install
 
-zypper in -y xorriso syslinux
-
 OUTPUT=../xcp-ng_custom.iso
 VERSION=8.3
 xorriso -as mkisofs -o $OUTPUT -v -r -J --joliet-long -V "XCP-ng $VERSION" -c boot/isolinux/boot.cat -b boot/isolinux/isolinux.bin \
                     -no-emul-boot -boot-load-size 4 -boot-info-table -eltorito-alt-boot -e boot/efiboot.img -no-emul-boot .
+
 isohybrid --uefi $OUTPUT
