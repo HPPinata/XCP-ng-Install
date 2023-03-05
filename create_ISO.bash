@@ -12,9 +12,9 @@ cd install
 bunzip2 < ../install.img | cpio -idm
 cd ..
 
-sed -i 's+module2 /boot/vmlinuz console=hvc0 console=tty0+module2 /boot/vmlinuz console=hvc0 console=tty0 answerfile=file:///answerfile.xml install+g' \
-./EFI/xenserver/grub.cfg
-sed -i 's+module2 /boot/vmlinuz console=hvc0 console=tty0+module2 /boot/vmlinuz console=hvc0 console=tty0 answerfile=file:///answerfile.xml install+g' \
+sed -i 's+/boot/vmlinuz console=hvc0 console=tty0+/boot/vmlinuz console=hvc0 console=tty0 answerfile=file:///answerfile.xml install+g' \
+./boot/isolinux/isolinux.cfg \
+./EFI/xenserver/grub.cfg \
 ./EFI/xenserver/grub-usb.cfg
 
 cp ../answerfile.xml ./install/
