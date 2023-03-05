@@ -27,12 +27,14 @@ cd ..
 sed -i 's+/boot/vmlinuz console=hvc0 console=tty0+/boot/vmlinuz console=hvc0 console=tty0 answerfile=file:///answerfile.xml install+g' \
 ./boot/isolinux/isolinux.cfg \
 ./EFI/xenserver/grub.cfg \
-./EFI/xenserver/grub-usb.cfg
+./EFI/xenserver/grub-usb.cfg \
 ./boot/temp/efi/xenserver/grub.cfg
 
+cd boot
 mdeltree -i efiboot.img ::
 mcopy -i efiboot.img -s ./temp/efi ::
 rm -rf temp
+cd ..
 
 OUTPUT=../xcp-ng_custom.iso
 VERSION=8.3
