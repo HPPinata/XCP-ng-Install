@@ -19,6 +19,8 @@ find . | cpio -o -H newc | bzip2 > ../install.img
 cd ..
 rm -rf install
 
+echo 'MTOOLS_LOWER_CASE=1' > ~/.mtoolsrc
+
 cd boot
 mkdir temp
 mcopy -si efiboot.img :: ./temp
@@ -35,6 +37,8 @@ mdeltree -i efiboot.img ::
 mcopy -i efiboot.img -s ./temp/efi ::
 rm -rf temp
 cd ..
+
+rm -rf ~/.mtoolsrc
 
 OUTPUT=../xcp-ng_custom.iso
 VERSION=8.3
