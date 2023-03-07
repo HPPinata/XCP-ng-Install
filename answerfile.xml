@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<installation mode="fresh" sr-type="ext">
+    <primary-disk preserve-first-partition="false">nvme0n1</primary-disk>
+    <root-password type="plaintext">changeME</root-password>
+    <source type="local">repo</source>
+    <keymap>de</keymap>
+    <admin-interface name="eth0" proto="dhcp" protov6="dhcp"/>
+    <hostname>xcp-ng</hostname>
+    <timezone>Europe/Berlin</timezone>
+</installation>
