@@ -30,7 +30,7 @@ jobs:
       - name: build
         run: |
           sudo apt update && sudo apt install -y bzip2 mtools syslinux-utils xorriso
-          wget https://updates.xcp-ng.org/isos/8.3/xcp-ng-8.3.0-alpha2.iso
+          wget https://updates.xcp-ng.org/isos/8.3/xcp-ng-8.3.0-beta1.iso
           sudo bash create_ISO.bash
 
       # Release custom ISO
