@@ -30,7 +30,7 @@ jobs:
       - name: build
         run: |
           sudo apt update && sudo apt install -y bzip2 mtools syslinux-utils xorriso
-          curl -O https://updates.xcp-ng.org/isos/8.3/xcp-ng-8.3.0-beta1.iso
+          curl -O https://updates.xcp-ng.org/isos/8.3/xcp-ng-8.3.0-beta2.iso
           sudo bash create_ISO.bash
 
       # Release custom ISO
@@ -38,5 +38,5 @@ jobs:
         with:
           commit: "main"
           name: "Download ISO"
-          tag: "8.3"
+          tag: "8.3-b2"
           artifacts: "xcp-ng_custom.iso"
