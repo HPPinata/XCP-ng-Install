@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <installation mode="fresh" sr-type="ext">
-    <primary-disk preserve-first-partition="false">nvme0n1</primary-disk>
+    <primary-disk preserve-first-partition="false">nvme2n1</primary-disk>
     <root-password type="plaintext">changeME</root-password>
     <source type="local">repo</source>
     <keymap>de</keymap>
